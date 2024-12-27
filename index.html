@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Context-Aware Chatbot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Enhanced Context-Aware Chatbot</h1>
+            <p>Interact with your documents intelligently.</p>
+        </header>
+
+        <main class="chat-section">
+            <div class="input-box">
+                <label for="question">Enter your question:</label>
+                <div class="input-group">
+                    <input type="text" id="question" placeholder="e.g., What is this document about?">
+                    <button id="clear-question" title="Clear input">&times;</button>
+                </div>
+
+                <label for="slider">Number of relevant documents to retrieve:</label>
+                <div class="slider-group">
+                    <input type="range" id="slider" min="1" max="10" value="5">
+                    <span id="sliderValue">5</span>
+                </div>
+
+                <button id="submit" class="ask-button">Ask Question</button>
+                <p class="error-message hidden" id="errorMessage">Please enter a valid question.</p>
+            </div>
+
+            <div id="responseContainer" class="response-box hidden">
+                <div class="loading hidden" id="loadingMessage">
+                    <div class="spinner"></div>
+                    <p>Processing your question...</p>
+                </div>
+                <div class="answer-section hidden" id="answerSection">
+                    <h2>Answer:</h2>
+                    <p id="answerText"></p>
+                    <h3>Relevant Documents:</h3>
+                    <ul id="documentList"></ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
